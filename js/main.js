@@ -69,6 +69,7 @@ $(function(){
         scrollHorizontally: true,
         navigation:true,
         navigationPosition:'right',
+        
 
         afterLoad: function(anchorLink, index){
             // console.log("현재섹션 =  " + index);
@@ -89,20 +90,20 @@ $(function(){
         }
         if(index==3){
             $('.skill_inner .txt').animate({'left':0 , 'opacity':1},1000);
-            $('.skill>li').animate({ 'opacity':1},1000);
-            $('.skill>li .depth2 li:first-child').animate({ 'opacity':1},1000);
-            $('.skill>li .depth2 li:nth-child(2)').animate({ 'opacity':1},1000);
-            $('.skill>li .depth2 li:nth-child(3)').animate({ 'opacity':1},1000);
-            $('.skill>li .depth2 li:nth-child(4)').animate({ 'opacity':1},1000);
-            $('.skill>li .depth2 li:nth-child(5)').animate({ 'opacity':1},1000);
-            $('.skill>li .depth2 li:last-child').animate({ 'opacity':1},1000);
+        
+            $('.skill .depth2 li:first-child').animate({ 'opacity':1},1000);
+            $('.skill .depth2 li:nth-child(2)').animate({ 'opacity':1},1000);
+            $('.skill .depth2 li:nth-child(3)').animate({ 'opacity':1},1000);
+            $('.skill .depth2 li:nth-child(4)').animate({ 'opacity':1},1000);
+            $('.skill .depth2 li:nth-child(5)').animate({ 'opacity':1},1000);
+            $('.skill .depth2 li:last-child').animate({ 'opacity':1},1000);
 
-            $('.depth2 li span .bar1').delay(1500).animate({'width':'80%', 'opacity':1},2000)
-            $('.depth2 li span .bar2').delay(1700).animate({'width':'80%', 'opacity':1},2000)
-            $('.depth2 li span .bar3').delay(1900).animate({'width':'95%', 'opacity':1},2000)
-            $('.depth2 li span .bar4').delay(2100).animate({'width':'90%', 'opacity':1},2000)
-            $('.depth2 li span .bar5').delay(2300).animate({'width':'60%', 'opacity':1},2000)
-            $('.depth2 li span .bar6').delay(2500).animate({'width':'70%', 'opacity':1},2000)
+            $('.depth2 span .bar1').delay(1500).animate({'width':'80%', 'opacity':1},2000)
+            $('.depth2 span .bar2').delay(1700).animate({'width':'80%', 'opacity':1},2000)
+            $('.depth2 span .bar3').delay(1900).animate({'width':'95%', 'opacity':1},2000)
+            $('.depth2 span .bar4').delay(2100).animate({'width':'90%', 'opacity':1},2000)
+            $('.depth2 span .bar5').delay(2300).animate({'width':'60%', 'opacity':1},2000)
+            $('.depth2 span .bar6').delay(2500).animate({'width':'70%', 'opacity':1},2000)
             
         
         }
@@ -111,6 +112,7 @@ $(function(){
                 $('.pf_inner .tab').animate({'opacity':1},1000)
                 $('.pf_inner .text h3').delay(500).animate({'opacity':1},1000)
                 $('.slick_slide').delay(1000).animate({'opacity':1},2000)
+                
                 
             
             }
@@ -207,7 +209,6 @@ $(function(){
         responsive:[
             {breakpoint: 1200,
                 settings:{
-                    
                         slidesToShow:2,
                         dots:true,
                         arrows:false
@@ -231,21 +232,33 @@ $(function(){
        $('.slick_slide').slick('setPosition')
    })
 //   ---lightBox---
-$('.slick_slide li .light').lightBox({
-    overlayBgColor: '#000',
-    overlayOpacity: 0.8,
-    imageLoading: 'images/loding.gif',
-    imageBtnClose: 'images/lightbox-btn-close.gif',
-    imageBtnPrev: 'images/lightbox-btn-prev.gif',
-    imageBtnNext: 'images/lightbox-btn-next.gif',
-    containerResizeSpeed: 1000,
-    txtImage: '작품',
-    scrolling:false,
+// $('.slick_slide li .light').lightBox({
+//     overlayBgColor: '#000',
+//     overlayOpacity: 0.8,
+//     imageLoading: 'images/loding.gif',
+//     imageBtnClose: 'images/lightbox-btn-close.gif',
+//     imageBtnPrev: 'images/lightbox-btn-prev.gif',
+//     imageBtnNext: 'images/lightbox-btn-next.gif',
+//     containerResizeSpeed: 1000,
+//     txtImage: '작품',
+//     scrolling:false,
 
-    txtOf: '/',
-   });
-  
-
+//     txtOf: '/',
+//    });
+   $('.group1').colorbox({rel:'group1',
+   maxWidth: '90%',
+    maxHeight: '95%',
+    title: function () {
+        return $(this).find('.inner').html();
+    }})
+    $('.group2').colorbox({rel:'group1',
+   maxWidth: '90%',
+    maxHeight: '95%',
+    title: function () {
+        return $(this).find('.inner').html();
+    }})
+   
+    
 // ---section4---
 // $('.slick_slide  .wrap').mouseenter(function(){
 //     $(this).find('.slide_cover').stop().fadeIn()
@@ -262,6 +275,8 @@ $('.e_mail').mouseleave(function(){
     $(this).parent().find('.smile').removeClass('on')
 
 })
+
+
 
 
 });
