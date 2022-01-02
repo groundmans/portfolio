@@ -60,6 +60,7 @@ function mouseenterFunc(){
 
 
 $(function(){
+   
     
     $('#fullpage').fullpage({
         //options here
@@ -224,6 +225,8 @@ $(function(){
             }
         ]
     })
+  
+
    $('.tab li').click(function(){
        let num = $(this).index()
        $(this).addClass('on').siblings().removeClass('on')
